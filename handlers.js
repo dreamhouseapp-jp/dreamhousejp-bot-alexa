@@ -25,8 +25,10 @@ exports.AnswerNumber = (slots, session, response) => {
     } else if (session.attributes.stage === "ask_price") {
         let price = slots.NumericAnswer.value;
         session.attributes.price = price;
-        let priceMin = price * 0.8;
-        let priceMax = price * 1.2;
+        let priceMin = price * 800;
+        let priceMax = price * 1200;
+        //let priceMin = price * 0.8;
+        //let priceMax = price * 1.2;
         salesforce.findProperties({city: session.attributes.city, bedrooms: session.attributes.bedrooms, priceMin: priceMin, priceMax: priceMax})
             .then(properties => {
                 if (properties && properties.length>0) {

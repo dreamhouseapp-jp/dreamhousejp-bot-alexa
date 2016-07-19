@@ -1,68 +1,68 @@
-# DreamHouse Bot for Alexa
+# Alexa 用 DreamHouse ボット
 
-A Salesforce-powered Alexa Skill for the DreamHouse sample application.
+DreamHouse サンプルアプリケーションで使用する、Salesforce ベースの Alexa スキルです。
 
-Follow the instructions below to create your own instance of the skill:
+スキルのインスタンスを作成するには、以下の手順を実行します。
 
 
-### Step 1: Install the DreamHouse App
+### ステップ 1：DreamHouse アプリをインストールする
 
-If you haven't already done so, follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) to install the DreamHouse sample application.
+DreamHouse サンプルアプリケーションをまだインストールしていない場合は、[この手順](http://dreamhouseappjp.io/installation/)を実行してインストールします。
 
-### Step 2: Create a Connected App
+### ステップ 2：接続アプリケーションを作成する
 
-If you haven't already done so, follow the steps below to create a Salesforce connected app:
+Salesforce 接続アプリケーションをまだ作成していない場合は、以下の手順を実行して作成します。
 
-1. In Salesforce Setup, type **Apps** in the quick find box, and click the **Apps** link
+1. Salesforce の［設定］で、クイック検索ボックスに「**アプリ**」と入力して［**アプリケーション**］リンクをクリックします。
 
-1. In the **Connected Apps** section, click **New**, and define the Connected App as follows:
+1. ［**接続アプリケーション**］セクションで、［**新規**］をクリックし、次のように接続アプリケーションを定義します。
 
-    - Connected App Name: MyConnectedApp (or any name you want)
-    - API Name: MyConnectedApp
-    - Contact Email: enter your email address
-    - Enabled OAuth Settings: Checked
-    - Callback URL: http://localhost:8200/oauthcallback.html (You'll change this later)
-    - Selected OAuth Scopes: Full Access (full)
-    - Click **Save**
+    - 接続アプリケーション名：DreamhouseJpAlexaApp（または任意の名前）
+    - API 参照名：DreamhouseJpAlexaApp
+    - 取引先責任者メール：自分のメールアドレスを入力します。
+    - OAuth 設定の有効化：チェックボックスをオンにします。
+    - コールバック URL：http://localhost:8200/oauthcallback.html
+    - 選択した OAuth 範囲：フルアクセス（full）
+    - ［**保存**］をクリックします。
 
-### Step 3: Deploy the DreamHouse Alexa Skill
+### ステップ 3：DreamHouse Alexa スキルをデプロイする
 
-1. Make sure you are logged in to the [Heroku Dashboard](https://dashboard.heroku.com/)
-1. Click the button below to deploy the Alexa Skill on Heroku:
+1. [Heroku ダッシュボード](https://dashboard.heroku.com/)にログインしていることを確認します。
+1. 下のボタンをクリックして、Alexa スキルを Heroku にデプロイします。
 
     [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-1. Fill in the config variables as described.
+1. 以下の通りに環境変数を設定します。
 
-    - For **SF_CLIENT_ID**, enter the Consumer Key of your Salesforce Connected App
-    - For **SF_CLIENT_SECRET**, enter the Consumer Secret of your Salesforce Connected App
-    - For **SF_USER_NAME**, enter the the username of your Salesforce integration user
-    - For **SF_PASSWORD**, enter the the username of your Salesforce integration user
+    - **SF_CLIENT_ID**：Salesforce 接続アプリケーションのコンシューマキーを入力します。
+    - **SF_CLIENT_SECRET**：Salesforce 接続アプリケーションのコンシューマの秘密を入力します。
+    - **SF_USER_NAME**：Salesforce 統合ユーザーのユーザー名を入力します。
+    - **SF_PASSWORD**：Salesforce 統合ユーザーのパスワードを入力します。
 
-### Step 4: Create an Amazon AWS account
+### ステップ 4：Amazon AWS アカウントを作成する
 
-If you don't already have an AWS account, follow the steps below to create one:
+まだ AWS アカウントを取得していない場合は、以下の手順を実行して作成します。
 
-1. Open a browser and access the AWS Console: http://aws.amazon.com/
- 
-1. Click **Create an AWS Account** 
+1. ブラウザを開き、AWS コンソール（http://aws.amazon.com/）にアクセスします。
 
-### Step 5: Configure the Skills
+1. ［**まずは無料で始める**］をクリックします。
 
-1. Login to the Alexa console: https://developer.amazon.com/edw/home.html
+### ステップ 5：スキルを構成する
 
-1. Click **Get Started** in the **Alexa Skills Kit** tile
+1. Alexa コンソール（https://developer.amazon.com/edw/home.html）にログインします。
 
-1. Click the **Add New Skill** button
+1. ［**Alexa Skills Kit**］の［**Get Started**］をクリックします。
 
-1. Fill in the **Skill Information** screen as follows:
+1. ［**Add New Skill**］ボタンをクリックします。
 
-    - Skill Type: **Custom Interaction Model**
-    - Name: **DreamHouse**
-    - Invocation Name: **dreamhouse**
-    
-1. On the **Interaction Model** Screen:    
-    - Paste the following JSON document in the **Intent Schema** box:
+1. ［**Skill Information**］画面で次のように入力します。
+
+    - Skill Type：**Custom Interaction Model**
+    - Name：**DreamHouse**
+    - Invocation Name：**dreamhouse**
+
+1. ［**Interaction Model**］画面で次のようにします。    
+    - 次の JSON ドキュメントをコピーして［**Intent Schema**］ボックスに貼り付けます。
 
         ```
         {
@@ -103,8 +103,8 @@ If you don't already have an AWS account, follow the steps below to create one:
         ]
         }
         ```
-    - Paste the following text in the **Sample Utterances** box:
-     
+    - 次のテキストをコピーして［**Sample Utterances**］ボックスに貼り付けます。
+
         ```
         SearchHouses for listings
         SearchHouses to search for houses
@@ -115,14 +115,13 @@ If you don't already have an AWS account, follow the steps below to create one:
         Changes for changes
         Changes for price changes
         ```
-     
-1. On the **Configuration** screen, select **HTTPS**, and enter the URL of the Heroku app you deployed in Step 3, followed by the /dreamhouse path. For example:
-     
+
+1. ［**Configuration**］画面で、［**HTTPS**］を選択し、ステップ 3 でデプロイした Heroku アプリの URL を入力し、末尾に /dreamhouse パスを付加します。次に例を示します。
+
      ```
      https://myalexabot.herokuapp.com/dreamhouse
      ```
 
-1. On the **SSL certificate** screen, select **My development endpoint is a subdomain of a domain that has a wildcard certificate from a certificate authority**
-  
-1. You are now ready to test the DreamHouse skill.  
-     
+1. ［**SSL certificate**］画面で、［**My development endpoint is a subdomain of a domain that has a wildcard certificate from a certificate authority**］を選択します。
+
+1. これで、DreamHouse スキルをテストする準備が整いました。  

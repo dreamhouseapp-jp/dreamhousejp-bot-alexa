@@ -19,7 +19,7 @@ app.post('/dreamhouse', (req, res) => {
         response = alx.response;
 
     if (type === 'LaunchRequest') {
-        response.say("Welcome to Dreamhouse");
+        response.say("Welcome to Dreamhouse. Youkoso!! But sorry I can't speak Japanese. Please tell something in english");
     } else if (type === 'IntentRequest') {
         let handler = handlers[intent];
         if (handler) {

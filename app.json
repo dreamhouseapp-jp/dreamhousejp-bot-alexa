@@ -1,21 +1,21 @@
 {
-  "name": "DreamHouse Alexa Skill",
-  "description": "Salesforce-powered Skill for Alexa in the DreamHouse sample app",
+  "name": "DreamHouseJP Alexa スキル",
+  "description": "DreamHouse サンプルアプリケーションで使用する、Salesforce ベースの Alexa スキル",
   "env": {
     "SF_CLIENT_ID": {
-      "description": "Consumer Key of your Salesforce Connected App",
+      "description": "Salesforce接続アプリケーションのコンシューマキー",
       "value":""
     },
     "SF_CLIENT_SECRET": {
-      "description": "Consumer Secret of your Salesforce Connected App",
+      "description": "Salesforce接続アプリケーションのコンシューマシークレット",
       "value":""
     },
     "SF_USER_NAME": {
-      "description": "Salesforce username for your integration user",
+      "description": "インテグレーション用のSalesforceユーザ名",
       "value":""
     },
     "SF_PASSWORD": {
-      "description": "Salesforce password for your integration user",
+      "description": "インテグレーション用のSalesforceユーザのパスワード",
       "value":""
     }
   }
